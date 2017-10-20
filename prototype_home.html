@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Ingest txt to csv</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js">
+function myFunction() {
+	alert('button clicked');
+	console.log("hi");
+    var str1 = "--context_param input=";
+	var v_input_dir = $('#arg1').val();
+	var q_input_dir = str1.concat(v_input_dir);
+	console.log(q_input_dir);
+	$('#arg1').val(q_input_dir);
+}
+
+var btn = document.getElementById('submitBtn');
+btn.onclick = myFunction;
+</script>
+</head>
+<body>
+
+<h1>Please enter values for the job</h1>
+<form action="http://localhost:8080/prototype_01_0.1/services/prototype_01" method="get">
+<p>Method:<br><input name="method" type="text" size="30" maxlength="30" value="runJob"></p>
+<p>Source File Directory:<br><input name="arg1" type="text" size="60" maxlength="1000" value="C:/Users/wyujia/OneDrive - JNJ/Projects/Talend Job/ingestion_web_service/input.txt"></p>
+
+<button id="submitBtn" name="submitBtn">Submit</button>  
+
+</form>
+
+</body>
+</html>
